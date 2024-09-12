@@ -1,3 +1,4 @@
+import random
 
 
 def load_words (file_path):
@@ -6,8 +7,15 @@ def load_words (file_path):
             words = file.read().splitlines()
             return words
     except FileNotFoundError:
-        print('File not found')
+        print(f" Error: {file_path} not found.")
         return []
+
+def chose_random_word(words):
+ 
+    if len(words) == 0:
+        print("Error: words list is empty")
+        return None
+    return random.choice(words)
 
 
 def main ():
