@@ -18,6 +18,14 @@ def chose_random_word(words):
         return None
     return random.choice(words)
 
+def get_user_guess():
+    guess = input("Guess a letter: ")
+    if len(guess) != 1:
+        print("Error: You can only guess a single letter!")
+        # Calls itself to ask for a new guess in case the user entered more than one letter
+        return get_user_guess()
+    return guess
+
 
 
 
@@ -31,6 +39,7 @@ def main ():
     #testing chose_random_word works
     word = chose_random_word(words)
     print(word)
+    get_user_guess()
 
  
 
