@@ -19,16 +19,17 @@ def chose_random_word(words):
     return random.choice(words)
 
 def get_user_guess():
-    guess = input("Guess a letter: ")
+    input_user = input("Guess a letter: ")
+    guess = input_user.lower()
     if len(guess) != 1 or guess.isalpha()==False:
         print("Error: Please enter a single letter.")
         # Calls itself to ask for a new guess in case the user entered more than one letter
         return get_user_guess()
     return guess
 
-# Step 7: Update game state
+# Update game state
 def update_game_state(game_state, guess):
-    if guess in game_state['word']:
+    if guess in game_state['word_lower_case']:
         game_state['guessed_letters'].append(guess)
     else:
         game_state['incorrect_guesses'].append(guess)
@@ -38,7 +39,8 @@ def update_game_state(game_state, guess):
 # Initialize a game state with a word
 def initialize_game(word):
     return {
-        "word": word,
+        "word_original": word,
+        "word_lower_case": word.lower(),
         "guessed_letters": [],
         "incorrect_guesses": [],
         "remaining_attempts": 6,
