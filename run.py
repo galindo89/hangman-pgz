@@ -26,6 +26,15 @@ def get_user_guess():
         return get_user_guess()
     return guess
 
+# Step 7: Update game state
+def update_game_state(game_state, guess):
+    if guess in game_state['word']:
+        game_state['guessed_letters'].append(guess)
+    else:
+        game_state['incorrect_guesses'].append(guess)
+        game_state['remaining_attempts'] =  game_state['remaining_attempts'] - 1
+    return game_state
+
 # Initialize a game state with a word
 def initialize_game(word):
     return {
@@ -44,10 +53,9 @@ if __name__ == "__main__":
     words = load_words('./words.txt')
     word = chose_random_word(words)
     game_state=initialize_game(word)
+    guess = get_user_guess()
     print(game_state)
-    print(words)
-    #testing chose_random_word works
-    print(word)
-    get_user_guess()
-
+    current_game_state=update_game_state(game_state, guess)
+    print(current_game_state)   
  
+   
