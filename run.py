@@ -20,27 +20,34 @@ def chose_random_word(words):
 
 def get_user_guess():
     guess = input("Guess a letter: ")
-    if len(guess) != 1:
-        print("Error: You can only guess a single letter!")
+    if len(guess) != 1 or guess.isalpha()==False:
+        print("Error: Please enter a single letter.")
         # Calls itself to ask for a new guess in case the user entered more than one letter
         return get_user_guess()
     return guess
 
+# Initialize a game state with a word
+def initialize_game(word):
+    return {
+        "word": word,
+        "guessed_letters": [],
+        "incorrect_guesses": [],
+        "remaining_attempts": 6,
+    }
 
 
 
-def main ():
+
+if __name__ == "__main__":
 
     #testing loading words works"
     words = load_words('./words.txt')
-    if words is None:
-        return
+    word = chose_random_word(words)
+    game_state=initialize_game(word)
+    print(game_state)
     print(words)
     #testing chose_random_word works
-    word = chose_random_word(words)
     print(word)
     get_user_guess()
 
  
-
-main()
