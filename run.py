@@ -36,6 +36,13 @@ def update_game_state(game_state, guess):
         game_state['remaining_attempts'] =  game_state['remaining_attempts'] - 1
     return game_state
 
+# Display word letters with guessed letters
+def display_word_letters(word, guessed_letters):
+
+    #converting the list guessed word into a string
+    return ''.join([letter if letter in guessed_letters else "_"  for letter in word])
+
+
 # Initialize a game state with a word
 def initialize_game(word):
     return {
@@ -58,6 +65,8 @@ if __name__ == "__main__":
     guess = get_user_guess()
     print(game_state)
     current_game_state=update_game_state(game_state, guess)
-    print(current_game_state)   
+    print(current_game_state)
+    current_guess_letters=display_word_letters(current_game_state['word_lower_case'], current_game_state['guessed_letters'])   
+    print(current_guess_letters)
  
    
