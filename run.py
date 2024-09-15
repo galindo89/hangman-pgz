@@ -42,6 +42,21 @@ def display_word_letters(word, guessed_letters):
     #converting the list guessed word into a string
     return ''.join([letter if letter in guessed_letters else "_"  for letter in word])
 
+def is_word_guessed(word, guessed_letters):
+
+    word_to_check = "".join([guessed_letters])
+    if word_to_check == word:
+        return True
+   
+def check_game_over(game_state):
+    if is_word_guessed(game_state['word_lower_case'], game_state['guessed_letters']):
+        print(f"Congratulations! You've guessed the word: {game_state['word']}")
+        return True
+    elif game_state['remaining_attempts'] == 0:
+        print(f"Game Over! The word was: {game_state['word']}")
+        return True
+    return False
+
 
 # Initialize a game state with a word
 def initialize_game(word):
@@ -69,4 +84,4 @@ if __name__ == "__main__":
     current_guess_letters=display_word_letters(current_game_state['word_lower_case'], current_game_state['guessed_letters'])   
     print(current_guess_letters)
  
-   
+
