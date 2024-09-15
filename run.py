@@ -69,7 +69,7 @@ def initialize_game(word):
     }
 def display_game_status(game_state):
     print(f"Word: {display_word_letters(game_state['word_lower_case'], game_state['guessed_letters'])}")
-    print(f"Incorrect guesses: {game_state['incorrect_guesses']}")
+    print(f"Incorrect guesses: {",".join(game_state['incorrect_guesses'])}")
     print(f"Remaining attempts: {game_state['remaining_attempts']}")
 
 
