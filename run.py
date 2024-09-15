@@ -44,7 +44,7 @@ def display_word_letters(word, guessed_letters):
 
 def is_word_guessed(word, guessed_letters):
 
-    word_to_check = "".join([guessed_letters])
+    word_to_check = "".join(guessed_letters)
     if word_to_check == word:
         return True
    
