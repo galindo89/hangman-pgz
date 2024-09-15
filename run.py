@@ -50,10 +50,10 @@ def is_word_guessed(word, guessed_letters):
    
 def check_game_over(game_state):
     if is_word_guessed(game_state['word_lower_case'], game_state['guessed_letters']):
-        print(f"Congratulations! You've guessed the word: {game_state['word']}")
+        print(f"Congratulations! You've guessed the word: {game_state['word_original']}")
         return True
     elif game_state['remaining_attempts'] == 0:
-        print(f"Game Over! The word was: {game_state['word']}")
+        print(f"Game Over! The word was: {game_state['word_original']}")
         return True
     return False
 
@@ -67,11 +67,31 @@ def initialize_game(word):
         "incorrect_guesses": [],
         "remaining_attempts": 6,
     }
+def display_game_status(game_state):
+    print(f"Word: {display_word_letters(game_state['word_lower_case'], game_state['guessed_letters'])}")
+    print(f"Incorrect guesses: {game_state['incorrect_guesses']}")
+    print(f"Remaining attempts: {game_state['remaining_attempts']}")
+
+
+def play_hangman(words):
+    word = chose_random_word(words)
+    game_state = initialize_game(word)
+
+    while not check_game_over(game_state):
+        display_game_status(game_state)
+        guess = get_user_guess()
+        update_game_state(game_state, guess)
 
 
 
 
 if __name__ == "__main__":
+    words = load_words('./words.txt')
+    if words:
+        play_hangman(words)
+
+
+""" if __name__ == "__main__":
 
     #testing loading words works"
     words = load_words('./words.txt')
@@ -84,4 +104,4 @@ if __name__ == "__main__":
     current_guess_letters=display_word_letters(current_game_state['word_lower_case'], current_game_state['guessed_letters'])   
     print(current_guess_letters)
  
-
+    """
