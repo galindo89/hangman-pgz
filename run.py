@@ -43,9 +43,11 @@ def display_word_letters(word, guessed_letters):
     return ''.join([letter if letter in guessed_letters else "_"  for letter in word])
 
 def is_word_guessed(word, guessed_letters):
-
-    word_to_check = "".join(guessed_letters)
-    if len(word_to_check) == len(word):
+    
+    word_unique_letters = set(word)
+    word_to_check = set("".join(guessed_letters))
+    
+    if len(word_to_check) == len(word_unique_letters):
         return True
    
 def check_game_over(game_state):
