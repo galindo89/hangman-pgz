@@ -88,7 +88,7 @@ def play_hangman(words):
         
         
         
-    if input("Do you want to play again? (y/n): ").lower() == ("yes" or "y"):
+    if input("Do you want to play again? (y/n): ").lower() in ["yes","y"]:
         play_hangman(words)
 
 
