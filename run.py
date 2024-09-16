@@ -16,7 +16,7 @@ def load_words(file_path):
 
 def chose_random_word(words):
     """
-    Choses a rnadom word from the list.
+    Choses a random word from the list.
     """
     if len(words) == 0:
         print("Error: words list is empty")
@@ -26,12 +26,12 @@ def chose_random_word(words):
 
 def get_user_guess():
     """
-    Prompts user to gess a letter.
+    Prompts user to guess a letter.
     """
     input_user = input("Guess a letter: ")
     guess = input_user.lower()
     if len(guess) != 1 or not guess.isalpha():
-        print("Error: Please enter a single leter.")
+        print("Error: Please enter a single letter.")
         return get_user_guess()
     return guess
 
