@@ -80,7 +80,14 @@ def play_hangman(words):
     while not check_game_over(game_state):
         display_game_status(game_state)
         guess = get_user_guess()
-        update_game_state(game_state, guess)
+       
+        if guess in game_state['guessed_letters'] or guess in game_state['incorrect_guesses']:
+            print("You've already guessed that letter.")
+        else: 
+            update_game_state(game_state, guess)       
+        
+        
+        
     if input("Do you want to play again? (y/n): ").lower() == ("yes" or "y"):
         play_hangman(words)
 
