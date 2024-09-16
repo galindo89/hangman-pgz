@@ -1,8 +1,10 @@
 import random
 
 
-# Load words from a file
 def load_words(file_path):
+    """
+    Loads words from a given file.
+    """
     try:
         with open(file_path, 'r') as file:
             words = file.read().splitlines()
@@ -12,8 +14,10 @@ def load_words(file_path):
         return []
 
 
-# Choose a random word from a list
 def chose_random_word(words):
+    """
+    Choses a rnadom word from the list.
+    """
     if len(words) == 0:
         print("Error: words list is empty")
         return None
@@ -21,16 +25,21 @@ def chose_random_word(words):
 
 
 def get_user_guess():
+    """
+    Prompts user to gess a letter.
+    """
     input_user = input("Guess a letter: ")
     guess = input_user.lower()
     if len(guess) != 1 or not guess.isalpha():
-        print("Error: Please enter a single letter.")
+        print("Error: Please enter a single leter.")
         return get_user_guess()
     return guess
 
 
-# Update game state
 def update_game_state(game_state, guess):
+    """
+    Updates the state of the game based on the user's guess.
+    """
     if guess in game_state['word_lower_case']:
         game_state['guessed_letters'].append(guess)
     else:
@@ -39,14 +48,18 @@ def update_game_state(game_state, guess):
     return game_state
 
 
-# Display word letters with guessed letters
 def display_word_letters(word, guessed_letters):
-    # converting the list guessed word into a string
+    """
+    Shows the word with correct guesses and blanks for the rest.
+    """
     return ''.join([letter if letter in guessed_letters else "_"
                     for letter in word])
 
 
 def is_word_guessed(word, guessed_letters):
+    """
+    Checks if the entire word has been guessed.
+    """
     word_unique_letters = set(word)
     word_to_check = set("".join(guessed_letters))
 
@@ -55,6 +68,9 @@ def is_word_guessed(word, guessed_letters):
 
 
 def check_game_over(game_state):
+    """
+    Checks if the game is over (win or lose).
+    """
     if is_word_guessed(game_state['word_lower_case'],
                        game_state['guessed_letters']):
         print(f"Congratulations! You've guessed the word: "
@@ -66,8 +82,10 @@ def check_game_over(game_state):
     return False
 
 
-# Initialize a game state with a word
 def initialize_game(word):
+    """
+    Initializes the game state.
+    """
     return {
         "word_original": word,
         "word_lower_case": word.lower(),
@@ -78,13 +96,19 @@ def initialize_game(word):
 
 
 def display_game_status(game_state):
-    print(f"Word: {display_word_letters(game_state['word_lower_case'], 
-                                        game_state['guessed_letters'])}")
+    """
+    Displays the current game status.
+    """
+    print(f"Word status: {display_word_letters(game_state['word_lower_case'],
+          game_state['guessed_letters'])}")
     print(f"Incorrect guesses: {', '.join(game_state['incorrect_guesses'])}")
     print(f"Remaining attempts: {game_state['remaining_attempts']}")
 
 
 def play_hangman(words):
+    """
+    Main function to start and run the hangman game.
+    """
     word = chose_random_word(words)
     game_state = initialize_game(word)
 
@@ -106,5 +130,3 @@ if __name__ == "__main__":
     words = load_words('./words.txt')
     if words:
         play_hangman(words)
-
-
