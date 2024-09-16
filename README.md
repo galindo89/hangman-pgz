@@ -154,8 +154,7 @@ You will also need to have a file called `words.txt` in the same directory, cont
 | Letter input validation       | Ensure only alphabetic letters are accepted as guesses  | Enter a number or symbol | Error message, prompt for a valid alphabetic letter        | Passed   |
 | Repeated guess handling       | Ensure repeated guesses do not count against the user   | Guess same letter twice| Second guess does not decrement remaining attempts         | Passed   |
 | Word with repeated letters    | Ensure words with repeated letters handle correctly     | Guess letter "o" for "book" | Both "o"s revealed in the word                             | Passed   |
-| Play again prompt validation  | Ensure correct input validation for play again prompt   | Enter "yes", "y", any other input      | Accepts 
-"yes" or "y" to continue, any other input ends the game                | Passed   |
+| Play again prompt validation  | Ensure correct input validation for play again prompt   | Enter "yes", "y", any other input      | Accepts yes" or "y" to continue, any other input ends the game                | Passed   |
 
 ### Code Validation
 #### Python
