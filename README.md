@@ -27,7 +27,6 @@ A simple command-line Hangman game implemented in Python. The player guesses let
     - [Local Development](#local-development)
       - [How to Clone](#how-to-clone)
   - [Testing](#testing)
-    - [Feature Testing](#feature-testing)
     - [Code Validation](#code-validation)
       - [Python](#python)
     - [Bugs Documentation](#bugs-documentation)
@@ -38,6 +37,7 @@ A simple command-line Hangman game implemented in Python. The player guesses let
   - [Credits](#credits)
     - [Code Used](#code-used)
     - [Acknowledgments](#acknowledgments)
+    - [Contact](#contact)
 
 ## Introduction
 
@@ -146,15 +146,14 @@ To clone the repository and run the game locally:
 You will also need to have a file called `words.txt` in the same directory, containing a list of words (one per line) for the game to use.
 
 ## Testing
-### Feature Testing
-
-| Feature                      | Test Description                                        | Input                  | Expected Output                                           | Status   |
-|------------------------------|--------------------------------------------------------|------------------------|-----------------------------------------------------------|----------|
-| Single letter validation      | Ensure only single letter inputs are accepted           | Enter multiple letters | Error message, prompt for single-letter input              | Passed   |
-| Letter input validation       | Ensure only alphabetic letters are accepted as guesses  | Enter a number or symbol | Error message, prompt for a valid alphabetic letter        | Passed   |
-| Repeated guess handling       | Ensure repeated guesses do not count against the user   | Guess same letter twice| Second guess does not decrement remaining attempts         | Passed   |
-| Word with repeated letters    | Ensure words with repeated letters handle correctly     | Guess letter "o" for "book" | Both "o"s revealed in the word                             | Passed   |
-| Play again prompt validation  | Ensure correct input validation for play again prompt   | Enter "yes", "y", any other input      | Accepts yes" or "y" to continue, any other input ends the game                | Passed   |
+| Feature                      | Test Description                                        | Input                  | Expected Output                                           | Status   | Image          |
+|------------------------------|--------------------------------------------------------|------------------------|-----------------------------------------------------------|----------|----------------|
+| Single letter validation      | Ensure only single letter inputs are accepted           | Enter multiple letters | Error message, prompt for single-letter input              | Passed   | ![Image](./readme-docs/testing/single-letter-validation.JPG) |
+| Letter input validation       | Ensure only alphabetic letters are accepted as guesses  | Enter a number or symbol | Error message, prompt for a valid alphabetic letter        | Passed   | ![Image](./readme-docs/testing/letter-input-validation.JPG) |
+| Repeated guess handling       | Ensure repeated guesses do not count against the user   | Guess same letter twice| Second guess does not decrement remaining attempts         | Passed   | ![Image](./readme-docs/testing/repeated-guess-handling.JPG) |
+| Attempts adjustment           | Ensure number of attempts decreases for incorrect guesses and remains for correct guesses | Guess a correct letter, then guess an incorrect letter | Remaining attempts unchanged after correct guess, decreases after incorrect guess | Passed | ![Image](./readme-docs/testing/attempts-adjustment.JPG) |
+| Word with repeated letters    | Ensure words with repeated letters handle correctly     | Guess letter "o" for "book" | Both "o"s revealed in the word                             | Passed   | ![Image](./readme-docs/testing/word-with-repeated-letters.JPG) |
+| Play again prompt validation  | Ensure correct input validation for play again prompt   | Enter "yes", "y", any other input      | Accepts "yes" or "y" to continue, any other input ends the game | Passed   | ![Image](./readme-docs/testing/play-again-prompt-validation.JPG) |
 
 ### Code Validation
 #### Python
@@ -198,3 +197,9 @@ This project was developed entirely by the author, with inspiration drawn from v
 
 -   Thanks to the Python community for their extensive documentation and examples.
 -   Special thanks to my mentors for guiding me through the development process.
+-   Special thanks to my tutor for his guidance and useful input throughout the development of this project.
+-   Gratitude to the Code Institute community for their support and helpful resources.
+  
+### Contact
+For more information, please contact [pablo.galindozapata@gmail.com].
+
