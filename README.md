@@ -1,4 +1,5 @@
 # Hangman Game
+![Hangman](./readme-docs/features/hangman-mockup.JPG)
 
 [Play Hangman on Heroku](https://your-heroku-app-link.com) | [View Code on GitHub](https://github.com/your-username/hangman-game)
 
