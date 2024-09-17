@@ -59,7 +59,7 @@ def display_word_letters(word, guessed_letters):
     Shows the word with correct guesses and underscore for the remaining unknow
     letters.
     """
-    return ''.join([letter if letter in guessed_letters else "_"
+    return ' '.join([letter if letter in guessed_letters else "_"
                     for letter in word])
 
 
