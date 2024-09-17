@@ -11,6 +11,8 @@ A simple command-line Hangman game implemented in Python. The player guesses let
   - [CONTENTS](#contents)
   - [Introduction](#introduction)
     - [Purpose of the project](#purpose-of-the-project)
+  - [How to Play](#how-to-play)
+    - [Steps to Play:](#steps-to-play)
   - [User Experience (UX)](#user-experience-ux)
     - [User Stories](#user-stories)
   - [Design](#design)
@@ -46,6 +48,41 @@ A simple command-line Hangman game implemented in Python. The player guesses let
 The purpose of this project is to build a simple command-line game of Hangman in Python, where a user attempts to guess a word one letter at a time. The game provides feedback on each guess, tracks the number of incorrect guesses, and ends when the player either successfully guesses the word or runs out of attempts.
 
 This project showcases basic programming constructs such as loops, conditionals, functions, and error handling in Python.
+
+## How to Play
+
+The Hangman game is a simple word-guessing game where you must guess the correct word by suggesting letters within a limited number of attempts.
+
+### Steps to Play:
+
+1. **Start the Game**:
+   - The game will randomly select a word from a predefined list.
+   - The word will be represented by underscores (`_`), with each underscore representing a letter.
+
+2. **Guess a Letter**:
+   - You will be prompted to guess one letter at a time.
+   - Enter a single alphabetic letter when prompted.
+
+3. **Correct and Incorrect Guesses**:
+   - If your guessed letter is correct, the corresponding letter will be revealed in the word.
+   - If your guess is incorrect, you will lose one attempt.
+   - **Note**: You have a maximum of 6 incorrect attempts. If you exceed this limit, the game will be over.
+
+4. **Track Your Progress**:
+   - The current state of the word (with guessed letters revealed) will be shown after each guess.
+   - The number of remaining incorrect attempts will also be displayed (starting at 6).
+   - A list of your incorrect guesses will be shown to help you keep track.
+
+5. **Winning the Game**:
+   - You win the game if you correctly guess all the letters in the word before running out of attempts.
+
+6. **Losing the Game**:
+   - You lose the game if you run out of attempts before guessing the entire word.
+   - The correct word will be revealed after the game ends.
+
+7. **Play Again**:
+   - After the game ends, you will be asked if you want to play again.
+   - Enter `yes` or `y` to start a new game, or any key to exit the game.
 
 ## User Experience (UX)
 
