@@ -2,3 +2,13 @@ python
 GATO
 Master
 book
+banana
+elephant
+keyboard
+mountain
+window
+laptop
+rocket
+pencil
+umbrella
+chocolate
